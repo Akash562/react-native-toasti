@@ -1,6 +1,6 @@
 {
   "name": "@npm_akash/react-native-toasti",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight and customizable toast library for React Native",
   "main": "src/index.js",
   "keywords": [
@@ -13,13 +13,13 @@
   ],
   "author": "Akash",
   "license": "MIT",
-  "homepage": "https://github.com/Akash-562/react-native-toasti",
+  "homepage": "https://github.com/Akash562/react-native-toasti",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Akash-562/react-native-toasti.git"
+    "url": "https://github.com/Akash562/react-native-toasti.git"
   },
   "bugs": {
-    "url": "https://github.com/Akash-562/react-native-toasti/issues"
+    "url": "https://github.com/Akash562/react-native-toasti/issues"
   },
   "files": [
     "src"
@@ -30,7 +30,7 @@
   "peerDependencies": {
     "react": ">=18",
     "react-native": ">=0.70",
-    "react-native-reanimated": ">=3.0.0"
+    "react-native-reanimated": ">=2.0.0"
   },
   "publishConfig": {
     "access": "public"
