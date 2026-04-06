@@ -28,9 +28,8 @@
     "test": "echo \"No tests yet\""
   },
   "peerDependencies": {
-    "react": ">=18",
-    "react-native": ">=0.70",
-    "react-native-reanimated": ">=2.0.0"
+    "react": "*",
+    "react-native": "*",
   },
   "publishConfig": {
     "access": "public"
