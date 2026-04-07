@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 
-const Toast = ({ message, type, onClose, position = 'bottom' }) => {
+const Toast = ({ message, type, onClose, position = 'bottom', icon = null }) => {
     const colorScheme = useColorScheme();
     const isDark = colorScheme === 'dark';
 
@@ -13,12 +13,13 @@ const Toast = ({ message, type, onClose, position = 'bottom' }) => {
         ]}>
 
             {/* Left Icon */}
-            <Text style={[
-                styles.icon,
-                getTextColor(type, isDark)
-            ]}>
-                {getIcon(type)}
-            </Text>
+            {icon ?
+                <View style={styles.icon}>
+                    {icon}
+                </View>
+                :
+                <Text style={[styles.icon, getTextColor(type, isDark)]}> {getIcon(type)} </Text>
+            }
 
             {/* Message */}
             <Text style={[
@@ -43,9 +44,12 @@ const Toast = ({ message, type, onClose, position = 'bottom' }) => {
 
 const getIcon = (type) => {
     switch (type) {
-        case 'success': return '✔️';
-        case 'error': return '❌';
-        default: return 'ⓘ';
+        case 'success':
+            return '✔️';
+        case 'error':
+            return '❌';
+        default:
+            return 'ⓘ';
     }
 };
 
