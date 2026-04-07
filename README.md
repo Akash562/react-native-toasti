@@ -31,9 +31,9 @@ npm install @npm_akash/react-native-toasti
 Wrap your root component with `ToastProvider`:
 
 ```js
-import React from "react";
-import { ToastProvider } from "@npm_akash/react-native-toasti";
-import Home from "./Home";
+import React from 'react';
+import { ToastProvider } from '@npm_akash/react-native-toasti';
+import Home from './Home';
 
 export default function App() {
   return (
@@ -48,29 +48,28 @@ export default function App() {
 
 ## 🪝 Usage
 
-Use the `useToast` hook in any component:
-
 ```js
-import React from "react";
-import { View, Button } from "react-native";
-import { useToast } from "@npm_akash/react-native-toasti";
+import React from 'react';
+import { View, Button } from 'react-native';
+import { Toast } from '@npm_akash/react-native-toasti';
 
 const Home = () => {
-  const { show } = useToast();
-
   return (
     <View>
       <Button
         title="Success Toast"
-        onPress={() => show("Saved successfully!", "success")}
+        onPress={() => Toast.success('Saved successfully!', 'top')}
       />
 
       <Button
         title="Error Toast"
-        onPress={() => show("Something went wrong!", "error")}
+        onPress={() => Toast.error('Something went wrong!', 'center')}
       />
 
-      <Button title="Info Toast" onPress={() => show("This is info", "info")} />
+      <Button
+        title="Info Toast"
+        onPress={() => Toast.info('This is info', 'bottom')}
+      />
     </View>
   );
 };
@@ -80,46 +79,13 @@ export default Home;
 
 ---
 
-## 🧩 API
+### `show(message, type, position)`
 
-### `useToast()`
-
-Returns:
-
-```js
-const { show } = useToast();
-```
-
----
-
-### `show(message, type)`
-
-| Param   | Type   | Default | Description            |
-| ------- | ------ | ------- | ---------------------- |
-| message | string | —       | Toast message          |
-| type    | string | info    | success / error / info |
-
----
-
-## 🎨 Customization
-
-You can modify styles inside `Toast.js`:
-
-```js
-success: { backgroundColor: 'green' },
-error: { backgroundColor: 'red' },
-info: { backgroundColor: 'blue' },
-```
-
----
-
-## 🚀 Roadmap
-
-- [ ] Animations (fade / slide)
-- [ ] Queue system
-- [ ] TypeScript support
-- [ ] Custom components
-- [ ] Global toast (without hook)
+| Param    | Type   | Default | Description                   |
+| -------- | ------ | ------- | ----------------------------- |
+| message  | string | —       | Toast message                 |
+| type     | string | show    | show / success / error / info |
+| position | string | bottom  | top / center / bottom         |
 
 ---
 
@@ -127,22 +93,11 @@ info: { backgroundColor: 'blue' },
 
 Contributions are welcome!
 
-1. Fork the repo
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
 ---
 
-## 📄 License
+## 📄 License & Author
 
-MIT License
-
----
-
-## 💡 Author
-
+MIT License.
 Made with ❤️ by @npm_akash
 
 ---
